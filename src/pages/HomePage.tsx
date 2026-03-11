@@ -1,7 +1,10 @@
 import "../App.css";
 import ThemeCard from "../components/ThemeCard";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-page">
       <div className="home-left">
@@ -18,23 +21,23 @@ export default function HomePage() {
 
         <div className="home-themes">
 
-            <ThemeCard
+          <ThemeCard
             title="Wat is AI?"
             colorClassName="theme-icon-blue"
-            onClick={() => alert("Klik: Wat is AI?")}
-            />
+            onClick={() => navigate("/wat-is-ai")}
+          />
 
-            <ThemeCard
+          <ThemeCard
             title="Taalmodellen"
             colorClassName="theme-icon-orange"
-            onClick={() => alert("Klik: Taalmodellen")}
-            />
+            onClick={() => navigate("/taalmodellen")}
+          />
 
-            <ThemeCard
+          <ThemeCard
             title="Mogelijkheden"
             colorClassName="theme-icon-green"
-            onClick={() => alert("Klik: Mogelijkheden")}
-            />
+            onClick={() => navigate("/mogelijkheden")}
+          />
 
         </div>
 
