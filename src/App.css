@@ -123,8 +123,15 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+
+
 .wat-is-ai-page{
-  background-color:#9fb4c8;
+  background: linear-gradient(
+    to bottom,
+    #9fb4c8 0%,
+    #4c6edb 45%,
+    #2c3e6b 100%
+  );
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -201,6 +208,13 @@ position:static;
   height: 60px;
   border-radius: 50%;
   border: 3px solid white;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
 
   display: flex;
   justify-content: center;
@@ -316,12 +330,19 @@ margin:auto;
   height: 45px;
   border-radius: 50%;
   border: 2px solid white;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   cursor: pointer;
-  background: transparent;
   z-index: 10;
 }
 
@@ -688,4 +709,243 @@ margin:auto;
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+
+/* DEEP LEARNING SECTIE */
+
+.deep-learning-section{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.deep-learning-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.deep-learning-left{
+  min-height: 1px;
+}
+
+.deep-learning-content{
+  grid-column: 2;
+  color: white;
+}
+
+.deep-learning-title-row{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.deep-learning-title-row h2{
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.1;
+  color: white;
+  white-space: nowrap;
+}
+
+.deep-learning-content p{
+  font-size: 16px;
+  line-height: 1.75;
+  color: white;
+  margin: 0 0 26px 0;
+  max-width: 620px;
+}
+
+.deep-learning-content h3{
+  margin: 52px 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.deep-learning-visual{
+  grid-column: 3;
+  width: 78%;
+  min-height: 260px;
+  border-radius: 20px;
+  background: #7f9db7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-left: auto;
+}
+
+.deep-learning-video-block{
+  width: 100%;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deep-learning-video-placeholder{
+  width: 570px;
+  height: 330px;
+  background-color: #f3f1eb;
+  border-radius: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4058b8;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.deep-learning-video-text{
+  width: 570px;
+  margin-top: 48px;
+}
+
+.deep-learning-video-text p{
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.deep-learning-network-block{
+  width: 100%;
+  margin-top: 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deep-learning-network-placeholder{
+  width: 570px;
+  height: 360px;
+  background-color: #f3f1eb;
+  border-radius: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4058b8;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.deep-learning-network-text{
+  width: 570px;
+  margin-top: 42px;
+}
+
+.deep-learning-network-text p{
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.deep-learning-highlight{
+  color: #f28b57;
+  font-weight: 700;
+}
+
+.deep-learning-special-block{
+  width: 100%;
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deep-learning-special-text{
+  width: 570px;
+}
+
+.deep-learning-special-text h2{
+  margin: 0 0 28px 0;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.deep-learning-special-text p{
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.deep-learning-special-placeholder{
+  width: 570px;
+  height: 410px;
+  background-color: #f3f1eb;
+  border-radius: 34px;
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4058b8;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.deep-learning-next-theme-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 110px;
+  padding-bottom: 80px;
+}
+
+.deep-learning-next-theme-button{
+  width: 570px;
+  min-height: 70px;
+  background-color: #4861c9;
+  border: none;
+  border-radius: 22px;
+  padding: 0 20px 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deep-learning-next-theme-arrow{
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+  line-height: 1;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.deep-learning-next-theme-arrow:hover{
+  border-color: #f2b29f;
+  color: #f2b29f;
 }
