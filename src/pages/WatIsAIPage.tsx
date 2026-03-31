@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function WatIsAIPage() {
   const [openMethod1, setOpenMethod1] = useState(false);
   const [openMethod2, setOpenMethod2] = useState(false);
   const [openMethod3, setOpenMethod3] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <div className="wat-is-ai-page">
@@ -47,8 +50,21 @@ export default function WatIsAIPage() {
 
       {/* NAVIGATION */}
       <div className="wat-is-ai-navigation">
-        <div className="arrow left"> ← </div>
-        <div className="arrow right"> →</div>
+        <button
+          className="arrow left"
+          onClick={() => navigate("/")}
+          aria-label="Ga naar de homepage"
+        >
+          ←
+        </button>
+
+        <button
+          className="arrow right"
+          onClick={() => navigate("/taalmodellen")}
+          aria-label="Ga naar de pagina over taalmodellen"
+        >
+          →
+        </button>
       </div>
 
 
@@ -446,7 +462,118 @@ export default function WatIsAIPage() {
 
       </section>
 
-      <div className="ai-scroll-top-button">↑</div>
+      {/* DEEP LEARNING SECTIE */}
+      <section className="deep-learning-section">
+
+        <div className="deep-learning-layout">
+
+          <div className="deep-learning-left"></div>
+
+          <div className="deep-learning-content">
+            <div className="deep-learning-title-row">
+              <h2>Wat is Deep Learning?</h2>
+            </div>
+
+            <p>
+              Wanneer we nog dieper gaan komen we bij Deep Learning. Dit is een
+              gespecialiseerde vorm van Machine Learning, wat zoals we net
+              geleerd hebben weer een vorm van de overkoepelende term AI is.
+              Deep Learning is een geavanceerde methode die vooral wordt ingezet
+              bij complexere toepassingen met grote hoeveelheden data.
+            </p>
+
+            <h3>Hoe werkt dat dan?</h3>
+
+            <p>
+              Het kernconcept van Deep Learning zit in het gebruik van zogeheten
+              kunstmatige neurale netwerken.
+            </p>
+          </div>
+
+          <div className="deep-learning-visual">
+            AFBEELDING
+          </div>
+
+        </div>
+
+        <div className="deep-learning-video-block">
+          <div className="deep-learning-video-placeholder">
+            VIDEO
+          </div>
+
+          <div className="deep-learning-video-text">
+            <p>
+              Hoewel we niet precies weten hoe het menselijk brein informatie
+              verwerkt, zijn deze systemen gebaseerd op een versimpelde, digitale
+              interpretatie van hoe wij denken dat leren en verbanden leggen
+              ongeveer werken. Zo’n netwerk bestaat uit verschillende lagen van
+              ‘knopen’ (ook wel neuronen genoemd), die met elkaar verbonden zijn.
+              Elke laag verwerkt de informatie een stap verder.
+            </p>
+          </div>
+        </div>
+
+        <div className="deep-learning-network-block">
+          <div className="deep-learning-network-placeholder">
+            AFBEELDING
+          </div>
+
+          <div className="deep-learning-network-text">
+            <p>
+              Wat Deep Learning onderscheidt van eenvoudigere methoden, is dat
+              het netwerk veel meer lagen heeft, soms tientallen of zelfs
+              honderden. Door deze ‘diepte’ kunnen deze netwerken zeer complexe
+              patronen herkennen in data, die met traditionele technieken
+              moeilijk te vinden zijn. Vandaar de naam deep learning. AI die
+              verborgen lagen zorgen echter wel voor een{" "}
+              <span className="deep-learning-highlight">blackbox</span> probleem.
+            </p>
+          </div>
+        </div>
+
+        <div className="deep-learning-special-block">
+          <div className="deep-learning-special-text">
+            <h2>Wat maakt Deep Learning bijzonder?</h2>
+
+            <p>
+              In tegenstelling tot sommige eenvoudigere AI-methoden, kan een
+              Deep Learning-systeem in bepaalde gevallen automatisch bepalen
+              welke kenmerken uit de data belangrijk zijn. Bij klassieke Machine
+              Learning moet een expert vaak eerst bepalen wat het systeem
+              precies moet analyseren. Bij Deep Learning kan het systeem dat
+              deels zelf doen. Hierdoor kan het worden toegepast op zeer
+              complexe data, zoals beeld, geluid of vrije tekst.
+            </p>
+          </div>
+
+          <div className="deep-learning-special-placeholder">
+            AFBEELDING
+          </div>
+        </div>
+
+        <div className="deep-learning-next-theme-wrapper">
+          <div className="deep-learning-next-theme-button">
+            <span>Door naar het volgende thema over taalmodellen?</span>
+
+            <button
+              className="deep-learning-next-theme-arrow"
+              onClick={() => navigate("/taalmodellen")}
+              aria-label="Ga naar de pagina over taalmodellen"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <button
+      className="ai-scroll-top-button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll terug naar boven"
+    >
+      ↑
+    </button>
 
     </div>
   );
