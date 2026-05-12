@@ -1,0 +1,862 @@
+.taalmodellen-page{
+  min-height: 100vh;
+  background: #e6b8aa;
+  padding: 2.5% 3%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.taalmodellen-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taalmodellen-logo,
+.taalmodellen-menu{
+  width: 110px;
+  color: #f8efe9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.taalmodellen-logo{
+  text-align: left;
+}
+
+.taalmodellen-menu{
+  text-align: right;
+}
+
+.taalmodellen-hero-wrapper{
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 70px;
+  padding-bottom: 35px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-hero{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  flex: 1;
+}
+
+.taalmodellen-hero h1{
+  margin: 0;
+  color: #fff7f2;
+  font-size: 3.2rem;
+  line-height: 1.45;
+  font-weight: 600;
+  max-width: 610px;
+}
+
+.taalmodellen-hero h1 span{
+  color: #351133;
+}
+
+.taalmodellen-scroll-block{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taalmodellen-scroll-block p{
+  margin: 0 0 12px 0;
+  color: #351133;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.taalmodellen-scroll-block p span{
+  text-decoration: underline;
+}
+
+.taalmodellen-scroll-arrows{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.7;
+}
+
+.taalmodellen-scroll-arrows span{
+  color: #f3d5cb;
+  font-size: 2.4rem;
+}
+
+/* =========================
+   TWEEDE SECTIE
+========================= */
+
+.taalmodellen-intro-section{
+  width: 100%;
+  padding: 70px 0 120px 0;
+}
+
+.taalmodellen-intro-content{
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.taalmodellen-intro-content h2{
+  margin: 0 0 28px 0;
+  color: #351133;
+  font-size: 3.2rem;
+}
+
+.taalmodellen-intro-content p{
+  margin: 0;
+  max-width: 720px;
+  color: #fff7f2;
+  line-height: 1.8;
+}
+
+.taalmodellen-examples{
+  margin-top: 70px;
+  display: flex;
+  gap: 40px;
+}
+
+.taalmodellen-example-card{
+  flex: 1;
+  text-align: center;
+}
+
+.taalmodellen-example-icon{
+  width: 150px;
+  height: 120px;
+  border: 3px solid #fff7f2;
+  border-radius: 18px;
+  margin: 0 auto 28px auto;
+}
+
+.taalmodellen-example-card h3{
+  margin: 0;
+  color: #351133;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+
+/* =========================
+   DERDE SECTIE
+========================= */
+
+.taalmodellen-chat-section{
+  width: 100%;
+  padding: 20px 0 50px 0;
+}
+
+.taalmodellen-chat-content{
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.taalmodellen-chat-content h2{
+  margin: 0 0 24px 0;
+  color: #351133;
+  font-size: 3rem;
+  max-width: 560px;
+}
+
+.taalmodellen-chat-content p{
+  margin: 0 0 34px 0;
+  color: #fff7f2;
+  max-width: 560px;
+}
+
+.taalmodellen-chat-placeholder{
+  width: 100%;
+  max-width: 580px;
+  height: 320px;
+  background: #ece8e3;
+  border-radius: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7d5c72;
+  font-weight: 600;
+}
+
+
+/* HOE WERKT EEN TAALMODEL SECTIE */
+
+.taalmodellen-uitleg-section{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.taalmodellen-uitleg-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-uitleg-left{
+  min-height: 10px;
+}
+
+.taalmodellen-uitleg-content{
+  width: 100%;
+}
+
+.taalmodellen-uitleg-title-row{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.taalmodellen-uitleg-title-row h2{
+  margin: 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.taalmodellen-uitleg-content > p{
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.taalmodellen-uitleg-note{
+  width: 100%;
+  margin-top: 50px;
+  background: #f3efe9;
+  border-radius: 32px;
+  padding: 35px 30px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-uitleg-note h3{
+  margin: 0 0 20px 0;
+  color: #34122f;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.taalmodellen-uitleg-note p{
+  margin: 0;
+  color: #34122f;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.taalmodellen-uitleg-visual{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-uitleg-placeholder{
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-uitleg-placeholder span{
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* PROMPT SECTIE */
+
+.taalmodellen-prompt-section{
+  width: 100%;
+  margin-top: 120px;
+}
+
+.taalmodellen-prompt-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.taalmodellen-prompt-left,
+.taalmodellen-prompt-right{
+  min-height: 10px;
+}
+
+.taalmodellen-prompt-center{
+  text-align: center;
+}
+
+.taalmodellen-prompt-center h2{
+  color: white;
+  font-size: 32px;
+  margin-bottom: 40px;
+  line-height: 1.3;
+}
+
+.taalmodellen-prompt-box{
+  width: 100%;
+  background: #f3efe9;
+  border-radius: 32px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.taalmodellen-prompt-box p{
+  margin: 0;
+  color: #2f2f2f;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* GEBEURT ER BIJ HET TAALMODEL SECTIE */
+
+.taalmodellen-proces-section{
+  width: 100%;
+  margin-top: 120px;
+}
+
+.taalmodellen-proces-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-proces-left,
+.taalmodellen-proces-right{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.taalmodellen-proces-left{
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-proces-right{
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-proces-center h2{
+  margin: 0 0 30px 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-proces-card{
+  width: 100%;
+  background: #f3efe9;
+  border-radius: 32px;
+  padding: 38px 40px 42px 40px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-proces-intro{
+  margin: 0 0 28px 0;
+  color: #1f1b1b;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.taalmodellen-proces-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.taalmodellen-proces-item{
+  width: 100%;
+  background: #8f7887;
+  color: white;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.taalmodellen-proces-uitleg{
+  margin: 0;
+  color: #1f1b1b;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.taalmodellen-proces-placeholder{
+  width: 75%;
+  min-height: 320px;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-proces-placeholder span{
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* DOORVERWIJZING NAAR MOGELIJKHEDEN */
+
+.taalmodellen-verwijzing-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-verwijzing-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-verwijzing-left,
+.taalmodellen-verwijzing-right{
+  min-height: 10px;
+}
+
+.taalmodellen-verwijzing-center{
+  width: 100%;
+}
+
+.taalmodellen-verwijzing-card{
+  width: 100%;
+  background: #b6cf7b;
+  border-radius: 24px;
+  padding: 22px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.taalmodellen-verwijzing-card p{
+  margin: 0;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 75%;
+}
+
+/* KNOP */
+
+.taalmodellen-verwijzing-button{
+  width: 56px;
+  height: 56px;
+  border: 4px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.taalmodellen-verwijzing-button span{
+  font-size: 36px;
+  line-height: 1;
+  margin-top: -3px;
+}
+
+.taalmodellen-verwijzing-button:hover{
+  transform: scale(1.05);
+}
+
+
+/* WAT ZIT ER ONDER DE MOTORKAP SECTIE */
+
+.taalmodellen-motorkap-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-motorkap-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-motorkap-left{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-motorkap-center{
+  width: 100%;
+}
+
+.taalmodellen-motorkap-center h2{
+  margin: 0 0 28px 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-motorkap-center p{
+  margin: 0 0 22px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.taalmodellen-motorkap-center p:last-of-type{
+  margin-bottom: 0;
+}
+
+.taalmodellen-motorkap-center strong{
+  color: #3f4db8;
+  font-weight: 700;
+}
+
+.taalmodellen-motorkap-right{
+  min-height: 10px;
+}
+
+.taalmodellen-motorkap-placeholder{
+  width: 75%;
+  min-height: 320px;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-motorkap-placeholder span{
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* WAT GEBEURT ER BINNEN EEN MODEL SECTIE */
+
+.taalmodellen-procesflow-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-procesflow-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.taalmodellen-procesflow-left,
+.taalmodellen-procesflow-right{
+  min-height: 10px;
+}
+
+.taalmodellen-procesflow-center{
+  width: 100%;
+}
+
+.taalmodellen-procesflow-center h2{
+  margin: 0 0 40px 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-procesflow-placeholder{
+  width: 100%;
+  min-height: 320px;
+  background: #f3efe9;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.taalmodellen-procesflow-placeholder span{
+  color: #888;
+  font-size: 16px;
+}
+
+.taalmodellen-procesflow-center p{
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* BLACKBOX SECTIE */
+
+.taalmodellen-blackbox-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-blackbox-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-blackbox-left,
+.taalmodellen-blackbox-right{
+  min-height: 10px;
+}
+
+.taalmodellen-blackbox-center{
+  width: 100%;
+}
+
+.taalmodellen-blackbox-center h2{
+  margin: 0 0 28px 0;
+  color: #f26a43;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-blackbox-center p{
+  margin: 0 0 36px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.taalmodellen-blackbox-placeholder{
+  width: 100%;
+  min-height: 360px;
+  background: #f3efe9;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.taalmodellen-blackbox-placeholder span{
+  color: #888;
+  font-size: 16px;
+}
+
+.taalmodellen-blackbox-uitleg{
+  margin: 30px 0 0 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.highlight-orange{
+  color: #f26a43;
+}
+
+
+/* WAAROM IS HET ZO LASTIG TE BEGRIJPEN SECTIE */
+
+.taalmodellen-begrijpen-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-begrijpen-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-begrijpen-left,
+.taalmodellen-begrijpen-right{
+  min-height: 10px;
+}
+
+.taalmodellen-begrijpen-center{
+  width: 100%;
+}
+
+.taalmodellen-begrijpen-center h2{
+  margin: 0 0 34px 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-begrijpen-center p{
+  margin: 0 0 34px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.taalmodellen-begrijpen-center p:last-of-type{
+  margin-bottom: 0;
+}
+
+.taalmodellen-highlight-orange{
+  color: #f26a43;
+}
+
+
+/* HUMAN IN THE LOOP SECTIE */
+
+.taalmodellen-human-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-human-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-human-left,
+.taalmodellen-human-right{
+  min-height: 10px;
+}
+
+.taalmodellen-human-center{
+  width: 100%;
+}
+
+.taalmodellen-human-label{
+  width: 100%;
+  background: #ea7a4d;
+  border-radius: 24px;
+  padding: 22px 28px;
+  box-sizing: border-box;
+  margin-bottom: 90px;
+}
+
+.taalmodellen-human-label span{
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.taalmodellen-human-center h2{
+  margin: 0 0 24px 0;
+  color: #ea7a4d;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-human-center h3{
+  margin: 0 0 28px 0;
+  color: white;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.taalmodellen-human-center p{
+  margin: 0 0 20px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.taalmodellen-human-center p:last-of-type{
+  margin-bottom: 0;
+}
+
+
+/* HALLUCINATIES EN BIAS SECTIE */
+
+.taalmodellen-risicos-section{
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.taalmodellen-risicos-layout{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+}
+
+.taalmodellen-risicos-left,
+.taalmodellen-risicos-right{
+  min-height: 10px;
+}
+
+.taalmodellen-risicos-center{
+  width: 100%;
+}
+
+.taalmodellen-risicos-center h2{
+  margin: 0 0 28px 0;
+  color: white;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.taalmodellen-risicos-center p{
+  margin: 0 0 34px 0;
+  color: white;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.taalmodellen-risicos-center h2:not(:first-of-type){
+  margin-top: 24px;
+}
+
+.taalmodellen-risicos-center p:last-of-type{
+  margin-bottom: 0;
+}

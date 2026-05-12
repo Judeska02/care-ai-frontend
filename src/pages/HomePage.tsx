@@ -1,4 +1,5 @@
 import "../App.css";
+import "./HomePage.css";
 import ThemeCard from "../components/ThemeCard";
 import { useNavigate } from "react-router-dom";
 

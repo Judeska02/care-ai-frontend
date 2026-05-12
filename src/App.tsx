@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import WatIsAIPage from "./pages/WatIsAIPage";
 import TaalmodellenPage from "./pages/TaalmodellenPage";
 import MogelijkhedenPage from "./pages/MogelijkhedenPage";
+import ExtraPage from "./pages/ExtraPage";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/wat-is-ai" element={<WatIsAIPage />} />
         <Route path="/taalmodellen" element={<TaalmodellenPage />} />
         <Route path="/mogelijkheden" element={<MogelijkhedenPage />} />
+        <Route path="/extra" element={<ExtraPage />} />
       </Routes>
     </HashRouter>
   );
