@@ -54,7 +54,15 @@ export default function HomePage() {
 
       <div className="home-right">
         <div className="image-placeholder">Hier komt later een afbeelding</div>
-        <div className="next-button">→</div>
+        
+        <button
+        className="arrow right"
+        onClick={() => navigate("/wat-is-ai")}
+        aria-label="Ga naar Wat is AI"
+      >
+        &#8250;
+      </button>
+      
       </div>
     </div>
   );
