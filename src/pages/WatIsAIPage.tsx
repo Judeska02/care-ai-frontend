@@ -57,7 +57,7 @@ export default function WatIsAIPage() {
           onClick={() => navigate("/")}
           aria-label="Ga naar de homepage"
         >
-          ←
+          &#8249;
         </button>
 
         <button
@@ -65,7 +65,7 @@ export default function WatIsAIPage() {
           onClick={() => navigate("/taalmodellen")}
           aria-label="Ga naar de pagina over taalmodellen"
         >
-          →
+          &#8250;
         </button>
       </div>
 
