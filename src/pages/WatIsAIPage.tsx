@@ -3,21 +3,47 @@ import "./WatIsAIPage.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import MenuButton from "../components/MenuButton";
+import MenuOverlay from "../components/MenuOverlay";
+
+
+import watIsAiIcon from "../assets/wat-is-ai-page/watisai-icon.png";
+import slimmeSpeaker from "../assets/wat-is-ai-page/slimme-speaker.png";
+import vectorDoctor from "../assets/wat-is-ai-page/vector-doctor.png";
+import lagen from "../assets/wat-is-ai-page/lagen.png";
+import eenVisual from "../assets/wat-is-ai-page/1.png";
+
+import beursOpHand from "../assets/wat-is-ai-page/beurs-op-hand.png";
+import beeldschermMetHoed from "../assets/wat-is-ai-page/beeldscherm-met-hoed.png";
+import vergrootglasOpTaalmodel from "../assets/wat-is-ai-page/vergrootglas-op-taalmodel.png";
+import ziekenhuisIcon from "../assets/wat-is-ai-page/ziekenhuis-icon.png";
+
+import supervised from "../assets/wat-is-ai-page/supervised.png";
+import neuraalNetwerk from "../assets/wat-is-ai-page/neuraal-netwerk.png";
+import mlVsDl from "../assets/wat-is-ai-page/ml-vs-dl.png";
+
 export default function WatIsAIPage() {
   const [openMethod1, setOpenMethod1] = useState(false);
   const [openMethod2, setOpenMethod2] = useState(false);
   const [openMethod3, setOpenMethod3] = useState(false);
 
+  const [showSupervisedImage, setShowSupervisedImage] = useState(false);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navigate = useNavigate();
 
   return (
     <div className="wat-is-ai-page">
+      {menuOpen && (
+        <MenuOverlay onClose={() => setMenuOpen(false)} />
+      )}
 
       {/* HEADER */}
       <div className="wat-is-ai-header">
 
         <div className="logo-placeholder">
-          LOGO
+          <img src={watIsAiIcon} alt="Wat is AI logo" />
         </div>
 
         <div className="progress-dots">
@@ -27,7 +53,7 @@ export default function WatIsAIPage() {
         </div>
 
         <div className="menu-placeholder">
-          MENU
+          <MenuButton onClick={() => setMenuOpen(true)} />
         </div>
 
       </div>
@@ -44,7 +70,7 @@ export default function WatIsAIPage() {
         </div>
 
         <div className="wat-is-ai-image">
-          AFBEELDING
+          <img src={slimmeSpeaker} alt="Slimme speaker" />
         </div>
 
       </div>
@@ -134,7 +160,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="ai-side-illustration">
-            AFBEELDING
+            <img src={vectorDoctor} alt="Zorgprofessional" />
           </div>
 
         </div>
@@ -148,7 +174,13 @@ export default function WatIsAIPage() {
         <div className="ml-layout">
 
           <div className="ml-visual">
-            VISUAL
+            <img src={lagen} alt="AI Machine Learning Deep Learning" />
+
+            <span className="layers-label layers-label-ai">AI</span>
+            <span className="layers-label layers-label-ml">ML</span>
+
+            <span className="layers-pointer-dot"></span>
+            <span className="layers-pointer-line"></span>
           </div>
 
           <div className="ml-content">
@@ -189,7 +221,7 @@ export default function WatIsAIPage() {
           <h2>Waarom kan Machine Learning goed worden ingezet in de zorg?</h2>
 
           <div className="care-visual-card">
-            AFBEELDING / VISUAL
+            <img src={eenVisual} alt="Machine Learning in de zorg" />
           </div>
 
           <p>
@@ -244,7 +276,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="process-visual">
-            AFBEELDING
+            <img src={beursOpHand} alt="Data verzamelen en voorbereiden" />
           </div>
         </div>
 
@@ -269,7 +301,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="process-visual">
-            AFBEELDING
+            <img src={beeldschermMetHoed} alt="Een model trainen" />
           </div>
         </div>
 
@@ -293,7 +325,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="process-visual">
-            AFBEELDING
+            <img src={vergrootglasOpTaalmodel} alt="Model testen en evalueren" />
           </div>
         </div>
 
@@ -339,7 +371,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="process-visual">
-            AFBEELDING
+            <img src={ziekenhuisIcon} alt="Ziekenhuis" />
           </div>
         </div>
 
@@ -374,21 +406,43 @@ export default function WatIsAIPage() {
 
               {openMethod1 && (
                 <div className="ml-method-body">
-                  <p>
-                    Hierbij krijgt het systeem voorbeelden van input met
-                    bijbehorende gewenste uitkomsten. Op basis daarvan wordt het
-                    model geoptimaliseerd om vergelijkbare verbanden te
-                    herkennen in nieuwe data. Denk bijvoorbeeld aan foto’s van
-                    honden en katten, waarbij telkens is aangegeven of het om
-                    een hond of een kat gaat. Zo leert het model patronen te
-                    herkennen die kenmerkend zijn voor honden en voor katten,
-                    waardoor het bij nieuwe foto’s zelfstandig kan bepalen of
-                    het om een hond of een kat gaat.
-                  </p>
+                  {!showSupervisedImage ? (
+                    <>
+                      <p>
+                        Hierbij krijgt het systeem voorbeelden van input met
+                        bijbehorende gewenste uitkomsten. Op basis daarvan wordt het
+                        model geoptimaliseerd om vergelijkbare verbanden te
+                        herkennen in nieuwe data. Denk bijvoorbeeld aan foto’s van
+                        honden en katten, waarbij telkens is aangegeven of het om
+                        een hond of een kat gaat. Zo leert het model patronen te
+                        herkennen die kenmerkend zijn voor honden en voor katten,
+                        waardoor het bij nieuwe foto’s zelfstandig kan bepalen of
+                        het om een hond of een kat gaat.
+                      </p>
 
-                  <button className="ml-method-image-button">
-                    Bekijk afbeelding
-                  </button>
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowSupervisedImage(true)}
+                      >
+                        Bekijk afbeelding
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        className="ml-method-image"
+                        src={supervised}
+                        alt="Supervised learning uitleg"
+                      />
+
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowSupervisedImage(false)}
+                      >
+                        Terug
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -493,14 +547,30 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="deep-learning-visual">
-            AFBEELDING
+            <img src={lagen} alt="AI Machine Learning Deep Learning" />
           </div>
 
         </div>
 
         <div className="deep-learning-video-block">
           <div className="deep-learning-video-placeholder">
-            VIDEO
+            <h3>
+              Neurale
+              <br />
+              Netwerken
+            </h3>
+
+            <button
+              className="deep-learning-video-play-button"
+              onClick={() =>
+                window.open(
+                  "https://www.youtube.com/watch?v=-zmnRz81CNQ",
+                  "_blank"
+                )
+              }
+            >
+              ▶
+            </button>
           </div>
 
           <div className="deep-learning-video-text">
@@ -517,7 +587,7 @@ export default function WatIsAIPage() {
 
         <div className="deep-learning-network-block">
           <div className="deep-learning-network-placeholder">
-            AFBEELDING
+              <img src={neuraalNetwerk} alt="Neuraal netwerk"/>
           </div>
 
           <div className="deep-learning-network-text">
@@ -548,8 +618,8 @@ export default function WatIsAIPage() {
             </p>
           </div>
 
-          <div className="deep-learning-special-placeholder">
-            AFBEELDING
+          <div className="deep-learning-ml-vs-dl-placeholder">
+            <img src={mlVsDl} alt="Machine learning versus deep learning" />
           </div>
         </div>
 
@@ -562,7 +632,7 @@ export default function WatIsAIPage() {
               onClick={() => navigate("/taalmodellen")}
               aria-label="Ga naar de pagina over taalmodellen"
             >
-              →
+              &#8250;
             </button>
           </div>
         </div>

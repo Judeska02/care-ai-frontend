@@ -17,18 +17,6 @@
   border-radius: 10px;
 }
 
-.extra-menu-button {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 .extra-content {
   min-height: calc(100vh - 4rem);
   display: grid;

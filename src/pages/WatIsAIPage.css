@@ -5,12 +5,11 @@
     #4c6edb 45%,
     #2c3e6b 100%
   );
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding:3% 6%;
+  min-height: 100vh;
+  padding: 2.5% 3%;
   position: relative;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .wat-is-ai-header{
@@ -19,37 +18,70 @@
   align-items:center;
 }
 
-.wat-is-ai-content{
+.logo-placeholder{
+  width: 60px;
+  height: 60px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  justify-content: center;
+}
+
+.logo-placeholder img{
   width: 100%;
-  margin: auto;
-  gap: 60px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.menu-placeholder{
+  width: 60px;
+  height: 60px;
+}
+
+.wat-is-ai-content{
+  width: 100%;
+  max-width: 860px;
+  min-height: calc(100vh - 180px);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
 }
 
 .wat-is-ai-text{
-  width: 38%;
+  width: 42%;
   color: white;
 }
 
 .wat-is-ai-text h1{
-  font-size: 4rem;
-  font-weight: 600;
-  line-height: 1.2;
   margin: 0;
+  color: #fffaf0;
+  font-size: 2.8rem;
+  line-height: 1.3;
+  font-weight: 700;
 }
 
 .wat-is-ai-image{
-  width: 42%;
-  height: 320px;
-  background: #7f9db7;
+  width: 360px;
+  height: 360px;
+  border-radius: 34px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: white;
-  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wat-is-ai-image img{
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
 }
 
 .wat-is-ai-navigation{
@@ -176,17 +208,21 @@
 
 .ai-side-illustration{
   grid-column: 3;
-  width: 70%;
+  width: 100%;
   min-height: 900px;
-  background: #7f9db7;
-  border-radius: 20px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
+  align-items: flex-start;
 
   margin-left: auto;
+}
+
+.ai-side-illustration img{
+  width: 55%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 
@@ -208,7 +244,6 @@
   grid-column: 1;
   width: 260px;
   height: 260px;
-  background: #7f9db7;
   border-radius: 20px;
 
   display: flex;
@@ -217,6 +252,54 @@
 
   color: white;
   justify-self: center;
+
+  position: relative;
+  top: -120px;
+}
+
+.ml-visual img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.layers-label{
+  position: absolute;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.layers-label-ai{
+  top: 28px;
+  left: 52px;
+}
+
+.layers-label-ml{
+  top: 62px;
+  left: 69px;
+}
+
+.layers-pointer-dot{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #1f2d5f;
+  border-radius: 50%;
+
+  top: 86px;
+  left: 185px;
+}
+
+.layers-pointer-line{
+  position: absolute;
+  width: 145px;
+  height: 2px;
+  background-color: #1f2d5f;
+
+  top: 89px;
+  left: 193px;
 }
 
 .ml-content{
@@ -253,7 +336,7 @@
 .care-content h2{
   font-size: 42px;
   line-height: 1.2;
-  color: #2f3e63;
+  color: #e9e5df;
   margin: 0 0 40px 0;
 }
 
@@ -267,8 +350,13 @@
   justify-content: center;
   align-items: center;
 
-  color: #2f3e63;
   margin-bottom: 40px;
+}
+
+.care-visual-card img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .care-content p{
@@ -375,6 +463,12 @@
   margin-top: 30px;
 }
 
+.process-visual img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* METHODEN VAN MACHINE LEARNING SECTIE */
 
@@ -478,6 +572,15 @@
   max-width: 95%;
 }
 
+.ml-method-image{
+  width: 100%;
+  max-width: 420px;
+  max-height: 240px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 18px auto;
+}
+
 .ml-method-image-button{
   display: block;
   margin: 0 auto;
@@ -551,12 +654,20 @@
   width: 78%;
   min-height: 260px;
   border-radius: 20px;
-  background: #7f9db7;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   margin-left: auto;
+}
+
+.deep-learning-visual img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+  position: relative;
+  top: -25px;
 }
 
 .deep-learning-video-block{
@@ -578,9 +689,42 @@
   align-items: center;
   justify-content: center;
 
+  position: relative;
+}
+
+.deep-learning-video-placeholder h3{
+  margin: 0;
   color: #4058b8;
   font-size: 40px;
   font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.deep-learning-video-play-button{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 64px;
+  height: 64px;
+
+  border: none;
+  background: rgba(180, 180, 180, 0.75);
+  color: white;
+
+  font-size: 32px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deep-learning-video-play-button:hover{
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 .deep-learning-video-text{
@@ -606,17 +750,19 @@
 
 .deep-learning-network-placeholder{
   width: 570px;
-  height: 360px;
-  background-color: #f3f1eb;
+  height: auto;
   border-radius: 34px;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  color: #4058b8;
-  font-size: 40px;
-  font-weight: 700;
+.deep-learning-network-placeholder img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .deep-learning-network-text{
@@ -664,20 +810,21 @@
   line-height: 1.8;
 }
 
-.deep-learning-special-placeholder{
+.deep-learning-ml-vs-dl-placeholder{
   width: 570px;
-  height: 410px;
-  background-color: #f3f1eb;
-  border-radius: 34px;
   margin-top: 38px;
+  border-radius: 34px;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  color: #4058b8;
-  font-size: 40px;
-  font-weight: 700;
+.deep-learning-ml-vs-dl-placeholder img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .deep-learning-next-theme-wrapper{
@@ -690,11 +837,10 @@
 
 .deep-learning-next-theme-button{
   width: 570px;
-  min-height: 70px;
+  height: 60px;
   background-color: #4861c9;
-  border: none;
-  border-radius: 22px;
-  padding: 0 20px 0 28px;
+  border-radius: 18px;
+  padding: 0 16px 0 24px;
 
   display: flex;
   align-items: center;
@@ -703,13 +849,12 @@
   color: white;
   font-size: 16px;
   font-weight: 700;
-  cursor: pointer;
 }
 
 .deep-learning-next-theme-arrow{
-  width: 50px;
-  height: 50px;
-  border: 3px solid white;
+  width: 48px;
+  height: 48px;
+  border: 4px solid white;
   border-radius: 50%;
   background: transparent;
   color: white;
@@ -718,15 +863,18 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1;
+  padding: 0 0 3px 0;
   flex-shrink: 0;
   cursor: pointer;
 
-  transition: all 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .deep-learning-next-theme-arrow:hover{
-  border-color: #f2b29f;
-  color: #f2b29f;
+  background-color: rgba(242, 140, 75, 0.25);
+  border-color: #f4b195;
+  color: #f4b195;
+  transform: scale(1.05);
 }
