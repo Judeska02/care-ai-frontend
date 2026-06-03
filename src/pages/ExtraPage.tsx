@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./ExtraPage.css";
 import { useNavigate } from "react-router-dom";
+import MenuButton from "../components/MenuButton";
+import MenuOverlay from "../components/MenuOverlay";
 
 export default function ExtraPage() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [deliveryType, setDeliveryType] = useState<"online" | "fysiek">("online");
 
@@ -18,9 +21,13 @@ export default function ExtraPage() {
 
   return (
     <main className="extra-page">
+      {menuOpen && (
+          <MenuOverlay onClose={() => setMenuOpen(false)} />
+        )}
+        
       <div className="extra-logo-placeholder"></div>
 
-      <button className="extra-menu-button">Menu</button>
+      <MenuButton onClick={() => setMenuOpen(true)} />
 
       <button
         className="arrow left"

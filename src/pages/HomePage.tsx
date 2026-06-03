@@ -3,6 +3,12 @@ import "./HomePage.css";
 import ThemeCard from "../components/ThemeCard";
 import { useNavigate } from "react-router-dom";
 
+import mogelijkhedenIcon from "../assets/menu/mogelijkheden-icon.png";
+import taalmodellenIcon from "../assets/menu/taalmodellen-icon.png";
+import watisAiIcon from "../assets/menu/watisai-icon.png";
+import collegasIllustratie from "../assets/homepage/collegas-illustratie.png";
+
+
 export default function HomePage() {
   const navigate = useNavigate();
 
@@ -24,18 +30,21 @@ export default function HomePage() {
 
           <ThemeCard
             title="Wat is AI?"
+            image={watisAiIcon}
             colorClassName="theme-icon-blue"
             onClick={() => navigate("/wat-is-ai")}
           />
 
           <ThemeCard
             title="Taalmodellen"
+            image={taalmodellenIcon}
             colorClassName="theme-icon-orange"
             onClick={() => navigate("/taalmodellen")}
           />
 
           <ThemeCard
             title="Mogelijkheden"
+            image={mogelijkhedenIcon}
             colorClassName="theme-icon-green"
             onClick={() => navigate("/mogelijkheden")}
           />
@@ -53,7 +62,13 @@ export default function HomePage() {
       </div>
 
       <div className="home-right">
-        <div className="image-placeholder">Hier komt later een afbeelding</div>
+        <div className="home-illustration-container">
+          <img
+            src={collegasIllustratie}
+            alt="Collega's illustratie"
+            className="home-illustration"
+          />
+        </div>
         
         <button
         className="arrow right"
