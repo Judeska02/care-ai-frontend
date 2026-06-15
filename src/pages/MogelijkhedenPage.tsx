@@ -1,24 +1,27 @@
 import "../App.css";
 import "./MogelijkhedenPage.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import MenuOverlay from "../components/MenuOverlay";
+import PageHeader from "../components/PageHeader";
 
 export default function MogelijkhedenPage() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="mogelijkheden-page">
-      {/* Header */}
-      <header className="mogelijkheden-header">
-        <div className="mogelijkheden-logo">LOGO</div>
+      {menuOpen && (
+        <MenuOverlay onClose={() => setMenuOpen(false)} />
+      )}
 
-        <div className="progress-dots">
-          <div className="dot"></div>
-          <div className="dot"></div>
-          <div className="dot active"></div>
-        </div>
-
-        <div className="mogelijkheden-menu">MENU</div>
-      </header>
+      <PageHeader
+        logo=""
+        logoAlt="Mogelijkheden logo"
+        activeDot={3}
+        onMenuClick={() => setMenuOpen(true)}
+      />
 
       {/* Pijlen links/rechts */}
       <button
@@ -284,7 +287,7 @@ export default function MogelijkhedenPage() {
                   </div>
                 </section>                
 
-                <section className="human-loop-section">
+                <section id="human-in-the-loop" className="human-loop-section">
                   <div className="human-loop-layout">
                     <div className="human-loop-content">
                       <h2>Human in the loop</h2>

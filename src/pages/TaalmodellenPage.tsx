@@ -1,24 +1,85 @@
 import "../App.css";
 import "./TaalmodellenPage.css";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+import MenuOverlay from "../components/MenuOverlay";
+import PageHeader from "../components/PageHeader";
+
+import taalmodellenIconOranje from "../assets/taalmodellen/taalmodellen-icon-oranje.png";
+import middel45 from "../assets/taalmodellen/middel-45.png";
+import middel47 from "../assets/taalmodellen/middel-47.png";
+import tekengebied17 from "../assets/taalmodellen/tekengebied-17.png";
+import tekengebied20 from "../assets/taalmodellen/tekengebied-20.png";
+
+import lagen2 from "../assets/taalmodellen/lagen-2.png";
+import middel50 from "../assets/taalmodellen/middel-50.png";
+import middel49 from "../assets/taalmodellen/middel-49.png";
+import middel51 from "../assets/taalmodellen/middel-51.png";
+
+import stappenLlm1 from "../assets/taalmodellen/stappen-llm-1.png";
+import stappenLlm2 from "../assets/taalmodellen/stappen-llm-2.png";
+import stappenLlm3 from "../assets/taalmodellen/stappen-llm-3.png";
+import stappenLlm4 from "../assets/taalmodellen/stappen-llm-4.png";
+import stappenLlm5 from "../assets/taalmodellen/stappen-llm-5.png";
+
+import blackbox from "../assets/taalmodellen/blackbox.png";
 
 export default function TaalmodellenPage() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showSecondImage, setShowSecondImage] = useState(false);
+  const [transformerOpen, setTransformerOpen] = useState(false);
+
+  const [currentLlmStep, setCurrentLlmStep] = useState(0);
+
+  const llmSteps = [
+    stappenLlm1,
+    stappenLlm2,
+    stappenLlm3,
+    stappenLlm4,
+    stappenLlm5,
+  ];
+
+  useEffect(() => {
+    const cycleImages = () => {
+      setShowSecondImage(false);
+
+      const switchToSecondImage = setTimeout(() => {
+        setShowSecondImage(true);
+      }, 1000);
+
+      return switchToSecondImage;
+    };
+
+    const firstSwitchTimer = cycleImages();
+
+    const intervalTimer = setInterval(() => {
+      cycleImages();
+    }, 11000);
+
+    return () => {
+      clearTimeout(firstSwitchTimer);
+      clearInterval(intervalTimer);
+    };
+  }, []);
+
 
   return (
     <div className="taalmodellen-page">
-      {/* Header */}
-      <header className="taalmodellen-header">
-        <div className="taalmodellen-logo">LOGO</div>
+      {menuOpen && (
+        <MenuOverlay onClose={() => setMenuOpen(false)} />
+      )}
+      
 
-        <div className="progress-dots">
-          <div className="dot"></div>
-          <div className="dot active"></div>
-          <div className="dot"></div>
-        </div>
+      <PageHeader
+        logo={taalmodellenIconOranje}
+        logoAlt="Taalmodellen logo"
+        activeDot={2}
+        onMenuClick={() => setMenuOpen(true)}
+        logoWidth={100}
+      />
 
-        <div className="taalmodellen-menu">MENU</div>
-      </header>
 
       {/* Pijlen links/rechts */}
       <button
@@ -78,7 +139,7 @@ export default function TaalmodellenPage() {
 
           <div className="taalmodellen-examples">
             <div className="taalmodellen-example-card">
-              <div className="taalmodellen-example-icon">ICOON</div>
+              <img src={middel45} alt="Automatisch genereren van gespreksverslagen" className="taalmodellen-example-image"/>
               <h3>
                 Automatisch genereren
                 <br />
@@ -87,7 +148,7 @@ export default function TaalmodellenPage() {
             </div>
 
             <div className="taalmodellen-example-card">
-              <div className="taalmodellen-example-icon">ICOON</div>
+              <img src={middel47} alt="Samenvatten van documenten" className="taalmodellen-example-image"/>
               <h3>
                 Samenvatten van
                 <br />
@@ -119,8 +180,16 @@ export default function TaalmodellenPage() {
             antwoord:
           </p>
 
-          <div className="taalmodellen-chat-placeholder">
-            VOORBEELD PLACEHOLDER
+          <div className="taalmodellen-chat-image-wrapper">
+            <img src={tekengebied17} alt="Voorbeeld van een vraag aan een taalmodel" className={`taalmodellen-chat-image ${
+                showSecondImage ? "taalmodellen-chat-image-hidden" : ""
+              }`}
+            />
+
+            <img src={tekengebied20} alt="Voorbeeld van een antwoord van een taalmodel" className={`taalmodellen-chat-image taalmodellen-chat-image-overlay ${
+                showSecondImage ? "" : "taalmodellen-chat-image-hidden"
+              }`}
+            />
           </div>
         </div>
       </section>
@@ -155,9 +224,14 @@ export default function TaalmodellenPage() {
           </div>
 
           <div className="taalmodellen-uitleg-visual">
-            <div className="taalmodellen-uitleg-placeholder">
-              <span>Afbeelding / video placeholder</span>
-            </div>
+            <img src={lagen2} alt="Lagen van een taalmodel" className="taalmodellen-uitleg-image"/>
+
+            <span className="taalmodellen-layer-label taalmodellen-layer-ai">AI</span>
+            <span className="taalmodellen-layer-label taalmodellen-layer-ml">ML</span>
+            <span className="taalmodellen-layer-label taalmodellen-layer-dl">DL</span>
+            <span className="taalmodellen-layer-label taalmodellen-layer-taalmodel">
+              Taalmodel
+            </span>
           </div>
         </div>
       </section>
@@ -184,11 +258,9 @@ export default function TaalmodellenPage() {
       {/* Zesde sectie - Wat gebeurt er bij het taalmodel? */}
       <section className="taalmodellen-proces-section">
         <div className="taalmodellen-proces-layout">
-          <div className="taalmodellen-proces-left">
-            <div className="taalmodellen-proces-placeholder">
-              <span>Afbeelding / video placeholder</span>
-            </div>
-          </div>
+         <div className="taalmodellen-proces-left">
+          <img src={middel50} alt="Illustratie van zorgprofessional" className="taalmodellen-proces-image"/>
+        </div>
 
           <div className="taalmodellen-proces-center">
             <h2>Gebeurt er bij het taalmodel het volgende:</h2>
@@ -219,9 +291,7 @@ export default function TaalmodellenPage() {
           </div>
 
           <div className="taalmodellen-proces-right">
-            <div className="taalmodellen-proces-placeholder">
-              <span>Afbeelding / video placeholder</span>
-            </div>
+            <img src={middel49} alt="Illustratie van AI-robot" className="taalmodellen-proces-right-image"/>
           </div>
         </div>
       </section>
@@ -242,10 +312,10 @@ export default function TaalmodellenPage() {
 
               <button
                 className="taalmodellen-verwijzing-button"
-                onClick={() => console.log("Nog niet gekoppeld")}
+                onClick={() => navigate("/mogelijkheden")}
                 aria-label="Ga naar de mogelijkheden pagina"
               >
-                <span>›</span>
+                <span> &#8250; </span>
               </button>
 
             </div>
@@ -256,12 +326,23 @@ export default function TaalmodellenPage() {
         </div>
       </section>
 
-            {/* Achtste sectie - Wat zit er onder de motorkap? */}
+      {/* Achtste sectie - Wat zit er onder de motorkap? */}
       <section className="taalmodellen-motorkap-section">
         <div className="taalmodellen-motorkap-layout">
           <div className="taalmodellen-motorkap-left">
-            <div className="taalmodellen-motorkap-placeholder">
-              <span>Afbeelding / video placeholder</span>
+            <div className="taalmodellen-motorkap-image-wrapper">
+              <img src={middel51} alt="Visualisatie van een neuraal netwerk" className="taalmodellen-motorkap-image"/>
+
+              <span className="taalmodellen-motorkap-label taalmodellen-motorkap-label-hidden">
+                Verborgen lagen
+              </span>
+              <span className="taalmodellen-motorkap-label taalmodellen-motorkap-label-input">
+                Input
+              </span>
+              <span className="taalmodellen-motorkap-label taalmodellen-motorkap-label-output">
+                Output
+              </span>
+
             </div>
           </div>
 
@@ -271,7 +352,21 @@ export default function TaalmodellenPage() {
             <p>
               Een taalmodel zoals Copilot is een vorm van kunstmatige
               intelligentie die gebruikmaakt van een techniek genaamd{" "}
-              <strong>Deep Learning</strong>. Hierbij wordt informatie verwerkt
+              <span
+                className="taalmodellen-inline-link"
+                onClick={() => {
+                  navigate("/wat-is-ai");
+
+                  setTimeout(() => {
+                    document
+                      .getElementById("deep-learning")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }, 100);
+                }}
+              >
+                Deep Learning
+              </span> {" "}
+              Hierbij wordt informatie verwerkt
               in kunstmatige neurale netwerken: wiskundige modellen die zijn
               opgebouwd uit lagen, een beetje zoals een fabriek waar informatie
               stap voor stap wordt verwerkt.
@@ -281,7 +376,13 @@ export default function TaalmodellenPage() {
               Grote taalmodellen (LLM’s) bestaan uit tientallen tot honderden
               lagen, waardoor ze complexe verbanden in taal kunnen herkennen.
               Ze maken gebruik van een specifieke aanpak, namelijk het{" "}
-              <strong>transformermodel</strong> dat in staat is om niet alleen
+              <button
+                className="taalmodellen-transformer-link"
+                onClick={() => setTransformerOpen(true)}
+              >
+                transformermodel
+              </button>
+              {" "} dat in staat is om niet alleen
               woorden los te bekijken, maar hele zinnen of alinea’s tegelijk –
               inclusief de onderlinge verbanden.
             </p>
@@ -296,6 +397,44 @@ export default function TaalmodellenPage() {
 
           <div className="taalmodellen-motorkap-right"></div>
         </div>
+
+          {transformerOpen && (
+            <div className="taalmodellen-transformer-modal">
+
+              <button
+                className="taalmodellen-transformer-close"
+                onClick={() => setTransformerOpen(false)}
+                aria-label="Sluit uitleg"
+              >
+                ×
+              </button>
+
+              <h2>Transformermodel</h2>
+
+              <p>
+                De Transformer is een soort AI-model die heel goed is in het leren van
+                sequenties, zoals een sequentie van woorden. Hierdoor leert het model welk
+                woord het meest waarschijnlijk is op basis van een sequentie van woorden.
+                Ze doen dit door woord voor woord te bekijken wat belangrijk is in een zin,
+                en welke woorden met elkaar te maken hebben.
+              </p>
+
+              <p>
+                In plaats van tekst gewoon van links naar rechts te lezen, kijken transformers
+                steeds naar alle woorden tegelijk en letten ze extra goed op welke woorden
+                belangrijk zijn voor elkaar. Dat heet “attention”, een soort focusmechanisme.
+                Zo kunnen ze bijvoorbeeld begrijpen dat “dokter” en “patiënt” in een zin iets
+                met elkaar te maken hebben, ook als er andere woorden tussen staan.
+              </p>
+
+              <p>
+                Je kunt het een beetje vergelijken met hoe jij een tekst scant: je kijkt snel
+                naar de belangrijke woorden en let op wat met wat te maken heeft, transformers
+                doen dat ook, maar dan heel snel en met grote hoeveelheden tekst tegelijk.
+              </p>
+
+            </div>
+          )}
       </section>
 
       {/* Negende sectie - Wat gebeurt er binnen een model */}
@@ -309,8 +448,32 @@ export default function TaalmodellenPage() {
               Wat gebeurt er binnen zo’n model wanneer je een vraag stelt?
             </h2>
 
-            <div className="taalmodellen-procesflow-placeholder">
-              <span>Afbeelding / video placeholder</span>
+            <div className="taalmodellen-procesflow-slider">
+              {currentLlmStep > 0 && (
+                <button
+                  className="taalmodellen-procesflow-prev"
+                  onClick={() => setCurrentLlmStep(currentLlmStep - 1)}
+                  aria-label="Vorige stap"
+                >
+                  &#8249;
+                </button>
+              )}
+
+              <img
+                src={llmSteps[currentLlmStep]}
+                alt={`Stap ${currentLlmStep + 1}`}
+                className="taalmodellen-procesflow-image"
+              />
+
+              <button
+                className="taalmodellen-procesflow-next"
+                onClick={() =>
+                  setCurrentLlmStep((currentLlmStep + 1) % llmSteps.length)
+                }
+                aria-label="Volgende stap"
+              >
+                &#8250;
+              </button>
             </div>
 
             <p>
@@ -345,13 +508,13 @@ export default function TaalmodellenPage() {
             </p>
 
             <div className="taalmodellen-blackbox-placeholder">
-              <span>Afbeelding / video placeholder</span>
+              <img src={blackbox}alt="Visualisatie van het black-box probleem" className="taalmodellen-blackbox-image"/>
             </div>
 
             <p className="taalmodellen-blackbox-uitleg">
-              Bij deze ‘black-box-modellen weten we wél wat erin gaat 
+              Bij deze ‘black-box-modellen weten we wél wat erin gaat {" "} 
               <span className="highlight-orange">(jouw input)</span>, 
-              en wat eruit komt 
+              en wat eruit komt {" "}
               <span className="highlight-orange">(de gegenereerde tekst)</span>, 
               maar de precieze route daartussen is voor mensen moeilijk te volgen. 
               Zeker bij taalmodellen zoals ChatGPT, die zijn gebouwd met deep learning 
@@ -412,9 +575,23 @@ export default function TaalmodellenPage() {
           <div className="taalmodellen-human-left"></div>
 
           <div className="taalmodellen-human-center">
-            <div className="taalmodellen-human-label">
+            <button
+              className="taalmodellen-human-label"
+              onClick={() => {
+                navigate("/mogelijkheden");
+
+                setTimeout(() => {
+                  document
+                    .getElementById("human-in-the-loop")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                }, 100);
+              }}
+            >
               <span>Human in the loop</span>
-            </div>
+            </button>
 
             <h2>Risico’s en valkuilen van taalmodellen</h2>
 
@@ -427,13 +604,10 @@ export default function TaalmodellenPage() {
               belanden. Omdat je in de zorg dagelijks werkt met gevoelige
               informatie zoals: patiëntendossiers, namen, klachten, medische
               beelden moet je voorzichtig zijn wanneer je gebruikmaakt van een
-              extern taalmodel.
-            </p>
-
-            <p>
-              (een taalmodel dat met een openbare server werkt die dus niet
+              extern taalmodel, (een taalmodel dat met een openbare server werkt die dus niet
               binnen de eigen zorginstelling beveiligd is).
             </p>
+
           </div>
 
           <div className="taalmodellen-human-right"></div>
@@ -480,6 +654,40 @@ export default function TaalmodellenPage() {
           </div>
 
           <div className="taalmodellen-risicos-right"></div>
+        </div>
+      </section>
+
+      {/* Door naar Mogelijkheden */}
+      <section className="taalmodellen-next-theme-section">
+        <div className="taalmodellen-next-theme-layout">
+
+          <div className="taalmodellen-next-theme-left"></div>
+
+          <div className="taalmodellen-next-theme-center">
+
+            <div className="taalmodellen-next-theme-button">
+
+              <span>
+                Door naar het volgende thema over de mogelijkheden?
+              </span>
+
+              <button
+                className="taalmodellen-next-theme-arrow"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate("/mogelijkheden");
+                }}
+                aria-label="Ga naar de mogelijkheden pagina"
+              >
+                &#8250;
+              </button>
+
+            </div>
+
+          </div>
+
+          <div className="taalmodellen-next-theme-right"></div>
+
         </div>
       </section>
 

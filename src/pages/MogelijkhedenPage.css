@@ -14,29 +14,6 @@
   overflow-x: hidden;
 }
 
-.mogelijkheden-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mogelijkheden-logo,
-.mogelijkheden-menu{
-  width: 110px;
-  color: #fffaf0;
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-}
-
-.mogelijkheden-logo{
-  text-align: left;
-}
-
-.mogelijkheden-menu{
-  text-align: right;
-}
-
 .mogelijkheden-hero-wrapper{
   min-height: calc(100vh - 60px);
   display: flex;
