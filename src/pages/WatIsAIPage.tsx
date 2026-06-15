@@ -3,8 +3,8 @@ import "./WatIsAIPage.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import MenuButton from "../components/MenuButton";
 import MenuOverlay from "../components/MenuOverlay";
+import PageHeader from "../components/PageHeader";
 
 
 import watIsAiIcon from "../assets/wat-is-ai-page/watisai-icon.png";
@@ -39,24 +39,12 @@ export default function WatIsAIPage() {
         <MenuOverlay onClose={() => setMenuOpen(false)} />
       )}
 
-      {/* HEADER */}
-      <div className="wat-is-ai-header">
-
-        <div className="logo-placeholder">
-          <img src={watIsAiIcon} alt="Wat is AI logo" />
-        </div>
-
-        <div className="progress-dots">
-          <div className="dot active"></div>
-          <div className="dot"></div>
-          <div className="dot"></div>
-        </div>
-
-        <div className="menu-placeholder">
-          <MenuButton onClick={() => setMenuOpen(true)} />
-        </div>
-
-      </div>
+      <PageHeader
+        logo={watIsAiIcon}
+        logoAlt="Wat is AI logo"
+        activeDot={1}
+        onMenuClick={() => setMenuOpen(true)}
+      />
 
 
       {/* HERO CONTENT */}
@@ -519,7 +507,7 @@ export default function WatIsAIPage() {
       </section>
 
       {/* DEEP LEARNING SECTIE */}
-      <section className="deep-learning-section">
+      <section id="deep-learning" className="deep-learning-section">
 
         <div className="deep-learning-layout">
 
