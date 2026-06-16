@@ -2,61 +2,117 @@
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
-  height: 210px;
-
+  height: 250px;
   background: #202b59;
-
-  z-index: 100;
+  z-index: 5000;
   color: #ffffff;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.menu-overlay-content button img,
+.menu-placeholder-icon{
+  width: 100px;
+  height: 100px;
+
+  padding: 14px;
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  object-fit: contain;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.menu-overlay-content button:nth-child(1) img{
+  background: #4a5fc7;
+}
+
+.menu-overlay-content button:nth-child(2) img{
+  background: #e8794d;
+}
+
+.menu-overlay-content button:nth-child(3) img{
+  background: #b6cf7b;
+}
+
+.menu-overlay-content button:nth-child(4) .menu-placeholder-icon{
+  background: #a9bdd6;
+}
+
+.menu-placeholder-icon{
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .menu-home-button,
 .menu-close-button {
   position: absolute;
-  top: 2rem;
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 1.5rem;
   cursor: pointer;
 }
 
 .menu-home-button {
-  left: 2rem;
+  top: 42px;
+  left: 48px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-home-button img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
 }
 
 .menu-close-button {
-  right: 2rem;
-  font-size: 4rem;
+  position: absolute;
+  top: 5%;
+  right: 1.5%;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 60px;
   line-height: 1;
+  cursor: pointer;
 }
 
 .menu-overlay-content {
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 5rem;
+  gap: 75px;
+  padding-top: 15px;
+  box-sizing: border-box;
 }
 
 .menu-overlay-content button {
+  width: 170px;
+  height: 170px;
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.menu-overlay-content button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
 }

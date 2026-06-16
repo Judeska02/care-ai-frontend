@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./MenuOverlay.css";
 
+import homeIcon from "../assets/menu/home-icon.png";
+import watIsAiIcon from "../assets/menu/watisai-icon.png";
+import taalmodellenIcon from "../assets/menu/taalmodellen-icon.png";
+import mogelijkhedenIcon from "../assets/menu/mogelijkheden-icon.png";
+
 type MenuOverlayProps = {
   onClose: () => void;
 };
@@ -16,7 +21,7 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
         onClick={() => navigate("/")}
         aria-label="Ga naar home"
       >
-        Home
+        <img src={homeIcon} alt="Home" />
       </button>
 
       <button
@@ -29,10 +34,25 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
       </button>
 
       <div className="menu-overlay-content">
-        <button onClick={() => navigate("/wat-is-ai")}>Wat is ai?</button>
-        <button onClick={() => navigate("/taalmodellen")}>Taalmodellen</button>
-        <button onClick={() => navigate("/mogelijkheden")}>Mogelijkheden</button>
-        <button onClick={() => navigate("/extra")}>Extra’s</button>
+        <button onClick={() => navigate("/wat-is-ai")}>
+          <img src={watIsAiIcon} alt="Wat is AI" />
+          <span>Wat is ai?</span>
+        </button>
+
+        <button onClick={() => navigate("/taalmodellen")}>
+          <img src={taalmodellenIcon} alt="Taalmodellen" />
+          <span>Taalmodellen</span>
+        </button>
+
+        <button onClick={() => navigate("/mogelijkheden")}>
+          <img src={mogelijkhedenIcon} alt="Mogelijkheden" />
+          <span>Mogelijkheden</span>
+        </button>
+
+        <button onClick={() => navigate("/extra")}>
+          <div className="menu-placeholder-icon"></div>
+          <span>Extra’s</span>
+        </button>
       </div>
     </div>
   );
