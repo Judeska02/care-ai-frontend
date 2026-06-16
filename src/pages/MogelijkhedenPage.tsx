@@ -6,6 +6,19 @@ import { useState } from "react";
 import MenuOverlay from "../components/MenuOverlay";
 import PageHeader from "../components/PageHeader";
 
+import mogelijkhedenLogo from "../assets/mogelijkheden/mogelijkheden-zwart-icon.png";
+import mogelijkhedenIllNew from "../assets/mogelijkheden/mogelijkheden-ill-new.png";
+import mogelijkheden10 from "../assets/mogelijkheden/mogelijkheden-10.png";
+
+import iconMog3 from "../assets/mogelijkheden/icon-mog-3.png";
+import iconMog from "../assets/mogelijkheden/icon-mog.png";
+import iconMog2 from "../assets/mogelijkheden/icon-mog-2.png";
+import iconMog1 from "../assets/mogelijkheden/icon-mog-1.png";
+import iconMog4 from "../assets/mogelijkheden/icon-mog-4.png";
+import iconMog5 from "../assets/mogelijkheden/icon-mog-5.png";
+
+import collegasPraten from "../assets/mogelijkheden/collegas-praten.png";
+
 export default function MogelijkhedenPage() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,10 +30,11 @@ export default function MogelijkhedenPage() {
       )}
 
       <PageHeader
-        logo=""
+        logo={mogelijkhedenLogo}
         logoAlt="Mogelijkheden logo"
         activeDot={3}
         onMenuClick={() => setMenuOpen(true)}
+        logoWidth={70}
       />
 
       {/* Pijlen links/rechts */}
@@ -54,7 +68,7 @@ export default function MogelijkhedenPage() {
           </div>
 
           <div className="mogelijkheden-hero-image">
-            AFBEELDING / ILLUSTRATIE
+            <img src={mogelijkhedenIllNew} alt="Illustratie mogelijkheden"/>
           </div>
         </main>
 
@@ -99,7 +113,7 @@ export default function MogelijkhedenPage() {
               </p>
 
               <div className="ondersteuning-image">
-                AFBEELDING / ILLUSTRATIE
+                <img src={mogelijkheden10} alt="Ondersteuning door AI"/>
               </div>
 
               <div className="mogelijkheden-question-card">
@@ -126,13 +140,13 @@ export default function MogelijkhedenPage() {
                   </div>
 
                   <div className="example-image right">
-                    AFBEELDING
+                    <img src={iconMog3} alt="Verslaglegging en rapportages"/>
                   </div>
                 </div>
 
                 <div className="example-block speech-to-text">
                   <div className="example-image left">
-                    AFBEELDING
+                    <img src={iconMog} alt="Speech to text"/>
                   </div>
 
                   <div className="example-text">
@@ -170,13 +184,13 @@ export default function MogelijkhedenPage() {
                   </div>
 
                   <div className="example-image right">
-                    AFBEELDING
+                    <img src={iconMog2} alt="Samenvattingen van lange teksten"/>
                   </div>
                 </div>
 
                 <div className="example-block taalniveau">
                   <div className="example-image left">
-                    AFBEELDING
+                    <img src={iconMog1} alt="Omzetten van taalniveau"/>
                   </div>
 
                   <div className="example-text">
@@ -213,13 +227,13 @@ export default function MogelijkhedenPage() {
                   </div>
 
                   <div className="example-image right">
-                    AFBEELDING
+                    <img src={iconMog4} alt="Genereren van e-mails of herinneringen"/>
                   </div>
                 </div>
 
                 <div className="example-block vertaaltaken">
                   <div className="example-image left">
-                    AFBEELDING
+                    <img src={iconMog5} alt="Vertaaltaken"/>
                   </div>
 
                   <div className="example-text">
@@ -243,7 +257,21 @@ export default function MogelijkhedenPage() {
                   <div></div>
 
                   <div className="mogelijkheden-video-placeholder">
-                    VIDEO PLACEHOLDER
+                    <div className="video-title">
+                      <span>Het inzetten van</span>
+                      <span>taalmodellen in</span>
+                      <span>de zorg</span>
+                    </div>
+
+                    <a
+                      href="https://www.youtube.com/watch?v=tSg7QFEIV5w"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="video-play-button"
+                      aria-label="Bekijk video"
+                    >
+                      ▶
+                    </a>
                   </div>
 
                   <div></div>
@@ -327,7 +355,7 @@ export default function MogelijkhedenPage() {
                   <div className="mogelijkheden-outro-layout">
                     <div className="mogelijkheden-outro-content">
                       <div className="mogelijkheden-outro-image">
-                        AFBEELDING / ILLUSTRATIE
+                        <img src={collegasPraten} alt="Collega's in gesprek over AI"/>
                       </div>
 
                       <p>
@@ -345,8 +373,8 @@ export default function MogelijkhedenPage() {
 
                         <button
                           className="prompt-cta-button"
-                          onClick={() => console.log("How To Prompt boekje aanvragen")}
-                          aria-label="Vraag het How To Prompt boekje aan"
+                          onClick={() => navigate("/extra")}
+                          aria-label="Ga naar Extra pagina"
                         >
                           <span>&#8250;</span>
                         </button>
@@ -355,6 +383,14 @@ export default function MogelijkhedenPage() {
                     </div>
                   </div>
                 </section>
+
+                <button
+                  className="ai-scroll-top-button"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  aria-label="Scroll terug naar boven"
+                >
+                  ↑
+                </button>
 
               </div>
 
