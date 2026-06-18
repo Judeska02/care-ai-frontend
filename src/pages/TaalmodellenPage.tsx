@@ -9,6 +9,7 @@ import PageHeader from "../components/PageHeader";
 import taalmodellenIconOranje from "../assets/taalmodellen/taalmodellen-icon-oranje.png";
 import middel45 from "../assets/taalmodellen/middel-45.png";
 import middel47 from "../assets/taalmodellen/middel-47.png";
+import vraagtekensInVakjes from "../assets/taalmodellen/vraagtekens-in-vakjes.png";
 import tekengebied17 from "../assets/taalmodellen/tekengebied-17.png";
 import tekengebied20 from "../assets/taalmodellen/tekengebied-20.png";
 
@@ -157,7 +158,7 @@ export default function TaalmodellenPage() {
             </div>
 
             <div className="taalmodellen-example-card">
-              <div className="taalmodellen-example-icon">ICOON</div>
+              <img src={vraagtekensInVakjes} alt="Hulp bij het beantwoorden van patiëntenvragen" className="taalmodellen-example-image"/>
               <h3>
                 Hulp bij het
                 <br />

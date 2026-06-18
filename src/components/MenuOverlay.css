@@ -37,14 +37,8 @@
   background: #b6cf7b;
 }
 
-.menu-overlay-content button:nth-child(4) .menu-placeholder-icon{
+.menu-overlay-content button:nth-child(4) img{
   background: #a9bdd6;
-}
-
-.menu-placeholder-icon{
-  border: 3px solid #ffffff;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.18);
 }
 
 .menu-home-button,

@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import MenuButton from "../components/MenuButton";
 import MenuOverlay from "../components/MenuOverlay";
 
+import extraIcon from "../assets/extra/extra-icon.png";
+import promptBoekje from "../assets/extra/prompt-boekje.png";
+
 export default function ExtraPage() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,8 +27,10 @@ export default function ExtraPage() {
       {menuOpen && (
           <MenuOverlay onClose={() => setMenuOpen(false)} />
         )}
-        
-      <div className="extra-logo-placeholder"></div>
+
+      <div>
+        <img src={extraIcon} alt="Extra pagina logo" className="extra-logo-placeholder"/>
+      </div>
 
       <MenuButton onClick={() => setMenuOpen(true)} />
 
@@ -41,7 +46,9 @@ export default function ExtraPage() {
         <div className="extra-left">
           <h1>Vraag hier jou ‘How To Prompt’ boekje aan!</h1>
 
-          <div className="extra-book-placeholder"></div>
+          <div>
+            <img src={promptBoekje} alt="How To Prompt boekje" className="extra-book-placeholder"/>
+          </div>
         </div>
 
         <div className="extra-choice">

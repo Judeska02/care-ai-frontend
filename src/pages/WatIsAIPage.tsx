@@ -16,9 +16,12 @@ import eenVisual from "../assets/wat-is-ai-page/1.png";
 import beursOpHand from "../assets/wat-is-ai-page/beurs-op-hand.png";
 import beeldschermMetHoed from "../assets/wat-is-ai-page/beeldscherm-met-hoed.png";
 import vergrootglasOpTaalmodel from "../assets/wat-is-ai-page/vergrootglas-op-taalmodel.png";
+import middel4 from "../assets/wat-is-ai-page/middel-4.png";
 import ziekenhuisIcon from "../assets/wat-is-ai-page/ziekenhuis-icon.png";
 
 import supervised from "../assets/wat-is-ai-page/supervised.png";
+import fotoUitklapblok2 from "../assets/wat-is-ai-page/foto-uitklapblok-2.png";
+import fotoUitklapblok3 from "../assets/wat-is-ai-page/foto-uitklapblok-3.png";
 import neuraalNetwerk from "../assets/wat-is-ai-page/neuraal-netwerk.png";
 import mlVsDl from "../assets/wat-is-ai-page/ml-vs-dl.png";
 
@@ -28,6 +31,8 @@ export default function WatIsAIPage() {
   const [openMethod3, setOpenMethod3] = useState(false);
 
   const [showSupervisedImage, setShowSupervisedImage] = useState(false);
+  const [showUnsupervisedImage, setShowUnsupervisedImage] = useState(false);
+  const [showReinforcementImage, setShowReinforcementImage] = useState(false);
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -336,7 +341,7 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="process-visual">
-            AFBEELDING
+            <img src={middel4} alt="Bijsturen van het model" />
           </div>
         </div>
 
@@ -449,21 +454,43 @@ export default function WatIsAIPage() {
 
               {openMethod2 && (
                 <div className="ml-method-body">
-                  <p>
-                    Hierbij worden geen uitkomsten meegegeven. Het model analyseert de
-                    data en groepeert elementen die wiskundig gezien op elkaar lijken.
-                    Denk bijvoorbeeld aan een verzameling foto’s van honden en katten,
-                    zónder dat erbij staat welk dier het is. Het model zoekt dan zelf
-                    naar overeenkomsten in de beelden, zoals vacht, oorvorm of
-                    lichaamsbouw, en groepeert de dieren die op elkaar lijken. Zo kunnen
-                    bijvoorbeeld alle katten in één groep terechtkomen en de honden in
-                    een andere, zonder dat het model expliciet heeft geleerd wat een hond
-                    of kat is.
-                  </p>
+                  {!showUnsupervisedImage ? (
+                    <>
+                      <p>
+                        Hierbij worden geen uitkomsten meegegeven. Het model analyseert de
+                        data en groepeert elementen die wiskundig gezien op elkaar lijken.
+                        Denk bijvoorbeeld aan een verzameling foto’s van honden en katten,
+                        zónder dat erbij staat welk dier het is. Het model zoekt dan zelf
+                        naar overeenkomsten in de beelden, zoals vacht, oorvorm of
+                        lichaamsbouw, en groepeert de dieren die op elkaar lijken. Zo kunnen
+                        bijvoorbeeld alle katten in één groep terechtkomen en de honden in
+                        een andere, zonder dat het model expliciet heeft geleerd wat een hond
+                        of kat is.
+                      </p>
 
-                  <button className="ml-method-image-button">
-                    Bekijk afbeelding
-                  </button>
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowUnsupervisedImage(true)}
+                      >
+                        Bekijk afbeelding
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        className="ml-method-image"
+                        src={fotoUitklapblok2}
+                        alt="Unsupervised learning uitleg"
+                      />
+
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowUnsupervisedImage(false)}
+                      >
+                        Terug
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -482,21 +509,43 @@ export default function WatIsAIPage() {
 
               {openMethod3 && (
                 <div className="ml-method-body">
-                  <p>
-                    Dit is een manier van leren waarbij een systeem feedback krijgt op zijn
-                    acties in de vorm van beloningen of straffen. Het probeert iets uit,
-                    leert van de uitkomst en past zijn gedrag aan om het de volgende keer
-                    beter te doen. Je kunt het vergelijken met het trainen van een hond:
-                    als de hond netjes gaat zitten, krijgt hij een snoepje; doet hij iets
-                    fout, dan blijft de beloning uit. Zo leert hij welk gedrag wenselijk
-                    is. Een AI-systeem leert op dezelfde manier, maar krijgt i.p.v. een
-                    snoepje bijvoorbeeld punten voor goed gedrag en puntenaftrek voor
-                    fouten.
-                  </p>
+                  {!showReinforcementImage ? (
+                    <>
+                      <p>
+                        Dit is een manier van leren waarbij een systeem feedback krijgt op zijn
+                        acties in de vorm van beloningen of straffen. Het probeert iets uit,
+                        leert van de uitkomst en past zijn gedrag aan om het de volgende keer
+                        beter te doen. Je kunt het vergelijken met het trainen van een hond:
+                        als de hond netjes gaat zitten, krijgt hij een snoepje; doet hij iets
+                        fout, dan blijft de beloning uit. Zo leert hij welk gedrag wenselijk
+                        is. Een AI-systeem leert op dezelfde manier, maar krijgt i.p.v. een
+                        snoepje bijvoorbeeld punten voor goed gedrag en puntenaftrek voor
+                        fouten.
+                      </p>
 
-                  <button className="ml-method-image-button">
-                    Bekijk afbeelding
-                  </button>
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowReinforcementImage(true)}
+                      >
+                        Bekijk afbeelding
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        className="ml-method-image"
+                        src={fotoUitklapblok3}
+                        alt="Reinforcement learning uitleg"
+                      />
+
+                      <button
+                        className="ml-method-image-button"
+                        onClick={() => setShowReinforcementImage(false)}
+                      >
+                        Terug
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -535,7 +584,13 @@ export default function WatIsAIPage() {
           </div>
 
           <div className="deep-learning-visual">
+
             <img src={lagen} alt="AI Machine Learning Deep Learning" />
+
+            <span className="deep-learning-label ai">AI</span>
+            <span className="deep-learning-label ml">ML</span>
+            <span className="deep-learning-label dl">DL</span>
+
           </div>
 
         </div>
