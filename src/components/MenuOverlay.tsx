@@ -5,6 +5,7 @@ import homeIcon from "../assets/menu/home-icon.png";
 import watIsAiIcon from "../assets/menu/watisai-icon.png";
 import taalmodellenIcon from "../assets/menu/taalmodellen-icon.png";
 import mogelijkhedenIcon from "../assets/menu/mogelijkheden-icon.png";
+import extraIcon from "../assets/extra/extra-icon.png";
 
 type MenuOverlayProps = {
   onClose: () => void;
@@ -50,9 +51,10 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
         </button>
 
         <button onClick={() => navigate("/extra")}>
-          <div className="menu-placeholder-icon"></div>
+          <img src={extraIcon} alt="Extra" />
           <span>Extra’s</span>
         </button>
+        
       </div>
     </div>
   );
